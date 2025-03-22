@@ -11,5 +11,6 @@ export default defineConfig({
     svg: true
   },
   integrations: [tailwind(), react()],
-  site: import.meta.env.MODE === 'production' ? 'https://FranSCoder.github.io/abogados-rcg-astro-fromscratch' : 'http://localhost:4321',
+  site: 'https://FranSCoder.github.io',
+  base: '/abogados-rcg-astro-fromscratch',
 });
