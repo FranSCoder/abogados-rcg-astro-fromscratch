@@ -18,19 +18,19 @@ import Logo from "../assets/Logo AbogadosRCG.png";
     <ul class="flex w-full justify-end gap-2 text-lg font-medium items-center">
         <li class="pt-1 whitespace-nowrap">
             <Button type="text-only">
-                <a href={Astro.site + '/'}> INICIO </a>
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/' : '/'}> INICIO </a>
             </Button>
         </li>
         |
         <li class="pt-1 whitespace-nowrap">
             <Button type="text-only">
-                <a href={Astro.site + '/nosotros'}> NOSOTROS </a>
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/nosotros' : '/nosotros'}> NOSOTROS </a>
             </Button>
         </li>
         |
         <li class="pt-1 whitespace-nowrap">
             <Button type="text-only">
-                <a href={Astro.site + '/contacto'}> CONTACTO </a>
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/contacto' : '/contacto'}> CONTACTO </a>
             </Button>
         </li>
         <li class="ml-4 whitespace-nowrap">
