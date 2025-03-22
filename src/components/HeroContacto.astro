@@ -19,7 +19,7 @@ let mode = import.meta.env.MODE
             </h1>
             <div
             class:list={[{
-                "absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
+                "absolute inset-0 w-full h-screen bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
                 "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode==="production", 
                 "bg-[url('biblioteca.jpg')]": mode!=="production" 
             }]}>
