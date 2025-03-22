@@ -1,7 +1,7 @@
 ---
 import LogoSVG from "/public/AbogadosRCG-Logo.svg"
 import LettersSVG from "/public/AbogadosRCG-Letters.svg"
-let mode = import.meta.env.mode
+let mode = import.meta.env.MODE
 ---
 
 <div class="h-5/6 flex flex-col w-full">
@@ -18,11 +18,11 @@ let mode = import.meta.env.mode
                 consectetur, adipisci velit...
             </h1>
             <div
-                class:list={[{
-                    "absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
-                    "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode==="production", 
-                    "bg-[url('biblioteca.jpg')]": mode!=="production" 
-                }]}>
+            class:list={[{
+                "absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
+                "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode==="production", 
+                "bg-[url('biblioteca.jpg')]": mode!=="production" 
+            }]}>
             </div>
         </section>
     </div>
