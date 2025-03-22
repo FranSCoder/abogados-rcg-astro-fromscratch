@@ -1,0 +1,53 @@
+---
+import Button from "../components/Button";
+import { Image } from "astro:assets";
+import Ficheros from "../assets/ficheros.jpg";
+---
+
+<div class="flex w-full">
+    <div class="w-1/2 flex justify-center">
+        <div
+            class="w-5/6 flex flex-col justify-center items-center text-center opacity-0 translate-x-[-5rem] ease duration-1000 fadeInRightOnScroll">
+            <h2 class="text-4xl text-gray-100 text-center">Nosotros</h2>
+            <br />
+            <p class="text-lg text-gray-100 text-center">
+                But I must explain to you how all this mistaken idea of
+                denouncing pleasure and praising pain was born and I will give
+                you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder
+                of human happiness.
+            </p>
+            <br />
+            <p class="text-lg text-gray-100 text-center">
+                No one rejects, dislikes, or avoids pleasure itself, because it
+                is pleasure.
+            </p>
+            <br />
+            <Button type="normal">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-scale"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path d="M7 20l10 0"></path><path d="M6 6l6 -1l6 1"
+                    ></path><path d="M12 3l0 17"></path><path
+                        d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path><path
+                        d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path></svg
+                >
+                <p>Ver más</p>
+            </Button>
+        </div>
+    </div>
+    <Image
+        class="w-1/2 object-contain transition-all opacity-0 translate-x-20 duration-1000 ease fadeInLeftOnScroll"
+        src={Ficheros}
+        alt="Pluma estilográfica"
+    />
+</div>

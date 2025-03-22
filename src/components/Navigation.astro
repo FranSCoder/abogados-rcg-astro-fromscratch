@@ -1,0 +1,48 @@
+---
+import Button from "./Button.jsx";
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo AbogadosRCG.png";
+---
+
+<div class="flex justify-between w-full items-center max-w-screen-lg ">
+    <a href="/" class="group relative inline-block">
+        <Image
+            loading="eager"
+            src={Logo}
+            alt="RCG Logo"
+            width="220"
+            class="!w-40 transition-all group-hover:scale-105 group-hover:brightness-110 group-hover:shadow-[0_0_10px_2px_rgba(0,0,0,.1)]"
+        />
+    </a>
+
+    <ul class="flex w-full justify-end gap-2 text-lg font-medium items-center">
+        <li class="pt-1 whitespace-nowrap">
+            <Button type="text-only">
+                <a href="/"> INICIO </a>
+            </Button>
+        </li>
+        |
+        <li class="pt-1 whitespace-nowrap">
+            <Button type="text-only">
+                <a href="/nosotros"> NOSOTROS </a>
+            </Button>
+        </li>
+        |
+        <li class="pt-1 whitespace-nowrap">
+            <Button type="text-only">
+                <a href="/"> SERVICIOS JURIDICOS </a>
+            </Button>
+        </li>
+        |
+        <li class="pt-1 whitespace-nowrap">
+            <Button type="text-only">
+                <a href="/"> CONTACTO </a>
+            </Button>
+        </li>
+        <li class="ml-4 whitespace-nowrap">
+            <Button type="highlight">
+                <a href="#">CONSÚLTENOS</a>
+            </Button>
+        </li>
+    </ul>
+</div>

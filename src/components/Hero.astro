@@ -1,0 +1,46 @@
+---
+import Button from "./Button";
+import LogoSVG from "/public/AbogadosRCG-Logo.svg";
+import LettersSVG from "/public/AbogadosRCG-Letters.svg";
+---
+
+<div class="h-full flex flex-col w-full">
+    <div class="h-full flex justify-center w-full">
+        <section
+            class="gap-6 w-full md:pt-[10%] relative h-screen flex items-center text-white text-center flex-col justify-center p-4">
+            <div class="gap-0 flex flex-col justify-center items-center animate-fadeIn">
+                <LogoSVG fill="#dbeafe" width={150} height={150} />
+                <LettersSVG fill="#dbeafe" width={500} height={100} />
+            </div>
+
+            <h1
+                class="opacity-0 text-4xl text-gray-100 md:w-3/5 w-full animate-delayedFadeInDown">
+                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit...
+            </h1>
+            <Button type="normal">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-scale"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path d="M7 20l10 0"></path><path d="M6 6l6 -1l6 1"
+                    ></path><path d="M12 3l0 17"></path><path
+                        d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path><path
+                        d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path></svg
+                >
+                <p>Ver más</p>
+            </Button>
+            <div
+                class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 bg-[url('src/assets/biblioteca.jpg')] transition-all animate-backgroundFadeIn">
+            </div>
+        </section>
+    </div>
+</div>

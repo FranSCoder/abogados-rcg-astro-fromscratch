@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Reunion from "../assets/reunion.jpg";
+---
+
+<div class="flex w-full h-screen">
+    <Image
+        class="w-1/2 h-screen object-cover transition-all opacity-0 translate-x-[-5rem] duration-1000 ease fadeInRightOnScroll"
+        src={Reunion}
+        alt="Pluma estilográfica"
+    />
+    <div class="w-1/2 flex justify-center">
+        <div
+            class="w-5/6 flex flex-col justify-center gap-4 items-start text-center opacity-0 translate-x-20 ease duration-1000 fadeInLeftOnScroll">
+            <h2 class="text-4xl text-gray-100 text-left">Nuestro Equipo</h2>
+            <p class="text-md text-gray-100 text-left">
+                En Abogados RCG, contamos con un equipo de profesionales
+                comprometidos con la excelencia jurídica y la defensa de los
+                derechos de nuestros clientes.
+            </p>
+            <p class="text-md text-gray-100 text-left">
+                Cada miembro de nuestro despacho aporta su experiencia y
+                conocimiento en distintas áreas del derecho, ofreciendo un
+                servicio personalizado y adaptado a cada caso. Nuestro
+                compromiso es brindarte asesoramiento claro, honesto y eficaz
+                para resolver tus necesidades legales con la máxima
+                profesionalidad.
+            </p>
+        </div>
+    </div>
+</div>

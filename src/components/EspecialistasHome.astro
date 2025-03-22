@@ -1,0 +1,57 @@
+---
+import Especializacion from "./Especializacion";
+---
+
+<div class="flex flex-col py-20">
+    <div class="gap-8 w-full flex flex-col justify-center items-center">
+        <div class="flex flex-col gap-8">
+            <h2
+                class="text-4xl text-gray-100 text-center duration-1000 fadeInDownOnScroll translate-y-[-3rem] opacity-0">
+                Nuestra experiencia nos avala
+            </h2>
+            <p
+                class="text-lg text-gray-100 text-center max-w-4xl duration-1000 fadeInOnScroll opacity-0">
+                En Abogados RCG, contamos con una sólida trayectoria en
+                distintas áreas del derecho. Nuestro compromiso y experiencia
+                nos permiten ofrecerle asesoramiento especializado y soluciones
+                eficaces para cada caso. Descubra nuestras principales áreas de
+                práctica y cómo podemos ayudarle
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 grid-rows-2 gap-12 w-9/12 aspect-[4/3]">
+            <div
+                class="relative p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
+                <Especializacion
+                    imageRoute="src/assets/reunion.jpg"
+                    title="Laboral"
+                    text="Etiam molestie sem convallis tincidunt egestas. Integer sodales ligula justo, accumsan dignissim dolor eleifend nec. Aenean dui nisi, condimentum non magna et, hendrerit auctor neque."
+                />
+            </div>
+            <div
+                class="relative p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
+                <Especializacion
+                    imageRoute="src/assets/family.jpg"
+                    title="Civil familiar"
+                    text="Nulla sit amet elit quis enim rutrum ultricies. Vestibulum pretium mattis nisl. Nullam ultricies a odio eget facilisis. Fusce efficitur arcu magna, eget interdum arcu."
+                />
+            </div>
+            <div
+                class="relative p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
+                <Especializacion
+                    imageRoute={"src/assets/papeles.jpg"}
+                    title="Administrativo"
+                    text="Phasellus tincidunt quam iaculis justo venenatis facilisis. Curabitur semper gravida quam, gravida aliquet ligula molestie in. In ac eleifend sapien. Ut id posuere turpis. Sed."
+                />
+            </div>
+            <div
+                class="relative p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
+                <Especializacion
+                    imageRoute={"src/assets/carkeys.jpg"}
+                    title="Multas"
+                    text="Cras justo sapien, interdum quis nisi ut, feugiat ultrices nibh. Donec in nibh auctor, tincidunt neque ac, lobortis nibh. Fusce consequat ultrices massa eu posuere."
+                />
+            </div>
+        </div>
+    </div>
+</div>
