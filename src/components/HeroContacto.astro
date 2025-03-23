@@ -3,8 +3,8 @@ import ContactForm from "./ContactForm.astro";
 let mode = import.meta.env.MODE;
 ---
 
-<div class="flex p-20 min-w-full min-h-screen gap-20" style="background: linear-gradient(to top, 
-      rgba(7, 22, 48, 0.6)0%,rgba(7, 22, 48, 0.9)50%), url('biblioteca.jpg'); background-size:cover;">
+<div class="flex p-20 min-w-full min-h-screen gap-20" style=`background: linear-gradient(to top, 
+      rgba(7, 22, 48, 0.6)0%,rgba(7, 22, 48, 0.9)50%), ${mode==="production" ? "url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')" : "url('biblioteca.jpg')"}; background-size:cover;`>
     <div class="flex flex-col gap-6 justify-center w-1/2 opacity-0 animate-delayedFadeInDown">
         <h2 class="text-6xl text-gray-100">
             Contáctanos y Resuelve tus Dudas Legales
