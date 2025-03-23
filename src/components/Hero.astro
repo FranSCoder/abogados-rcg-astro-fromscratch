@@ -2,22 +2,22 @@
 import Button from "./Button";
 import LogoSVG from "/public/AbogadosRCG-Logo.svg";
 import LettersSVG from "/public/AbogadosRCG-Letters.svg";
-let mode = import.meta.env.MODE
+let mode = import.meta.env.MODE;
 ---
 
 <div class="h-full flex flex-col w-full">
     <div class="h-full flex justify-center w-full">
         <section
             class="gap-6 w-full md:pt-[10%] relative h-screen flex items-center text-white text-center flex-col justify-center p-4">
-            <div class="gap-0 flex flex-col justify-center items-center animate-fadeIn">
+            <div
+                class="gap-0 flex flex-col justify-center items-center animate-fadeIn">
                 <LogoSVG fill="#dbeafe" width={150} height={150} />
                 <LettersSVG fill="#dbeafe" width={500} height={100} />
             </div>
-
             <h1
-                class="opacity-0 text-4xl text-gray-100 md:w-3/5 w-full animate-delayedFadeInDown">
-                Neque quisquam est qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit...
+                class="pb-8 opacity-0 text-4xl text-gray-100 md:w-3/5 w-full animate-delayedFadeInDown">
+                Protegemos sus derechos con asesoramiento legal experto en
+                Sanlúcar de Barrameda.
             </h1>
             <Button type="normal">
                 <svg
@@ -40,11 +40,14 @@ let mode = import.meta.env.MODE
                 <p>Ver más</p>
             </Button>
             <div
-                class:list={[{
-                    "absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
-                    "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode==="production", 
-                    "bg-[url('biblioteca.jpg')]": mode!=="production" 
-                }]}>
+                class:list={[
+                    {
+                        "absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
+                        "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]":
+                            mode === "production",
+                        "bg-[url('biblioteca.jpg')]": mode !== "production",
+                    },
+                ]}>
             </div>
         </section>
     </div>
