@@ -1,29 +1,67 @@
 ---
-import LogoSVG from "/public/AbogadosRCG-Logo.svg"
-import LettersSVG from "/public/AbogadosRCG-Letters.svg"
-let mode = import.meta.env.MODE
+import ContactForm from "./ContactForm.astro";
+let mode = import.meta.env.MODE;
 ---
 
-<div class="h-5/6 flex flex-col w-full">
-    <div class="h-5/6 flex justify-center w-full">
-        <section
-            class="gap-6 w-full md:pt-[10%] relative flex items-center text-white text-center flex-col justify-center p-4">
-            <div class="gap-0 flex flex-col justify-center items-center animate-fadeIn">
-                <LogoSVG fill="#dbeafe" width={150} height={150} />
-                <LettersSVG fill="#dbeafe" width={500} height={100} />
+<div class="flex p-20 min-w-full min-h-screen gap-20" style="background: linear-gradient(to top, 
+      rgba(7, 22, 48, 0.6)0%,rgba(7, 22, 48, 0.9)50%), url('biblioteca.jpg'); background-size:cover;">
+    <div class="flex flex-col gap-6 justify-center w-1/2 opacity-0 animate-delayedFadeInDown">
+        <h2 class="text-6xl text-gray-100">
+            Contáctanos y Resuelve tus Dudas Legales
+        </h2>
+        <hr class="text-4xl text-gray-100 w-10" />
+        <p class="text-2xl text-gray-100">
+            En Abogados RCG, estamos aquí para ofrecerte el asesoramiento
+            jurídico que necesitas.
+        </p>
+        <div class="flex flex-col">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f3f4f6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail-up">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 19h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5.5" stroke="#f3f4f6"></path>
+                    <path d="M19 22v-6" stroke="#f3f4f6"></path>
+                    <path d="M22 19l-3 -3l-3 3" stroke="#f3f4f6"></path>
+                    <path d="M3 7l9 6l9 -6"></path>
+                </svg>
+                <h3 class="text-4xl text-gray-100">Email</h3>
             </div>
-            <h1
-                class="opacity-0 text-4xl text-gray-100 md:w-3/5 w-full animate-delayedFadeInDown">
-                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit...
-            </h1>
-            <div
-            class:list={[{
-                "absolute inset-0 w-full h-screen bg-cover bg-center opacity-30 -z-10 transition-all animate-backgroundFadeIn": true,
-                "bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode==="production", 
-                "bg-[url('biblioteca.jpg')]": mode!=="production" 
-            }]}>
+            <a class="text-2xl text-gray-100 underline" href="mailto:raul@abogadosrcg.com">raul@abogadosrcg.com</a>
+            <p class="text-2xl text-gray-100">
+                Envíanos tu consulta y nuestro equipo te responderá a la mayor
+                brevedad.
+            </p>
+        </div>
+        <div class="flex flex-col">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f3f4f6" class="icon icon-tabler icons-tabler-filled icon-tabler-phone">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z"></path>
+                </svg>
+                <h3 class="text-4xl text-gray-100">Teléfono y Whatsapp</h3>
             </div>
-        </section>
+            <a class="text-2xl text-gray-100 underline" href="tel:3499629268">699 629 268</a>
+            <p class="text-2xl text-gray-100">
+                Estamos disponibles para resolver tus dudas y ayudarte a
+                gestionar una cita con nuestros abogados.
+            </p>
+        </div>
     </div>
+    <div class="flex flex-col items-center justify-center w-1/2">
+        <div class="flex flex-col p-6 bg-blue-100 rounded-lg text-main-gold gap-8">
+            <h2 class="text-5xl text-center">
+                ¿Quieres agendar una cita o tienes alguna consulta?
+            </h2>
+            <p class="text-2xl text-center">
+                Ponte en contacto con nosotros para cualquier consulta, resolver
+                dudas o agendar una asesoría legal con nuestro equipo de
+                abogados.
+            </p>
+            <ContactForm />
+        </div>
+    </div>
+    <!-- <div class="absolute flex w-full h-[940px] top-0 left-0 bg-cover opacity-30 -z-10 transition-all animate-backgroundFadeIn"
+        class:list={[
+            {"bg-[url('/abogados-rcg-astro-fromscratch/biblioteca.jpg')]": mode === "production", 
+             "bg-[url('biblioteca.jpg')]": mode !== "production"}]}>
+    </div> -->
 </div>

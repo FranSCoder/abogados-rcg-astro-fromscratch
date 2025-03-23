@@ -1,0 +1,59 @@
+---
+const formAction = "https://formspree.io/f/xrbpqpzz";
+---
+
+<form
+    action={formAction}
+    method="POST"
+    class="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
+    <label class="block mb-2"
+        >Nombre:
+        <input
+            type="text"
+            name="nombre"
+            required
+            class="w-full p-2 border rounded"
+        />
+    </label>
+
+    <label class="block mb-2"
+        >Teléfono:
+        <input
+            type="tel"
+            name="telefono"
+            required
+            class="w-full p-2 border rounded"
+        />
+    </label>
+
+    <label class="block mb-2"
+        >Email:
+        <input
+            type="email"
+            name="email"
+            required
+            class="w-full p-2 border rounded"
+        />
+    </label>
+
+    <label class="block mb-2"
+        >Consulta:
+        <textarea name="consulta" required class="w-full p-2 border rounded"
+        ></textarea>
+    </label>
+
+    <label class="flex items-center my-4 gap-x-1">
+        <input type="checkbox" name="terms" required class="mr-2" />
+        Acepto los <a href="/terminos" class="text-blue-500"
+            >Términos y Condiciones</a
+        > y la <a href="/privacidad" class="text-blue-500"
+            >Política de Privacidad</a
+        >.
+    </label>
+
+    <button
+        type="submit"
+        class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        >Enviar</button
+    >
+</form>
