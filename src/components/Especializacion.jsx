@@ -4,8 +4,8 @@ function Especializacion({imageRoute, title, text}) {
     return (
         <>
             <div className="absolute flex flex-col gap-1 text-main-gold left-2 bottom-2 bg-gray-200 p-4 rounded-sm w-9/12">
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <p className="text-sm/4">{text}</p>
+                <h3 className="text-2xl font-semibold">{title}</h3>
+                <p className="text-lg/5">{text}</p>
                 {/* <Button type="text-only">
                     <div className="flex gap-1 items-center font-medium">
                         Ver más
