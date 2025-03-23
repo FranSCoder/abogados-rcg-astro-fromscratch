@@ -1,3 +1,7 @@
+---
+let mode = import.meta.env.MODE;
+---
+
 <div
     class="gap-6 p-4 relative h-full w-full flex flex-col justify-center items-center text-white text-center">
     <h1 class="opacity-0 text-4xl text-gray-100 md:w-3/5 w-full animate-fadeIn">
@@ -14,6 +18,6 @@
         </iframe>
     </div>
     <div
-        class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 bg-[url('src/assets/mesa_reunion.jpg')] transition-all animate-backgroundFadeIn">
+        class=`absolute inset-0 w-full h-full bg-cover bg-center opacity-30 -z-10 ${mode==="production" ? "bg-[url('/abogados-rcg-astro-fromscratch/mesa_reunion.jpg')]" :"bg-[url('mesa_reunion.jpg')]"} transition-all animate-backgroundFadeIn`>
     </div>
 </div>
