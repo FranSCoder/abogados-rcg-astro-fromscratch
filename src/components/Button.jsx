@@ -9,7 +9,7 @@ export default function Button({type, children}) {
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease"></span>
             </button>
         ) : type==="text-only" ? (
-            <button class="relative text-main-gold transition-all duration-300 ease after:block after:content-[''] after:w-0 after:h-[2px] after:bg-yellow-600 after:transition-all after:duration-300 hover:after:w-full w-fit">
+            <button className="relative text-main-gold transition-all duration-300 ease after:block after:content-[''] after:w-0 after:h-[2px] after:bg-yellow-600 after:transition-all after:duration-300 hover:after:w-full w-fit">
                 {children}
             </button> 
         ) : (

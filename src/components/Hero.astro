@@ -37,7 +37,7 @@ let mode = import.meta.env.MODE;
                         d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path><path
                         d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path></svg
                 >
-                <p>Ver más</p>
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/nosotros' : '/nosotros'}>Ver más</a>
             </Button>
             <div
                 class:list={[

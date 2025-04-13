@@ -35,30 +35,47 @@ const links = [
         </div>
         <div
             class="p-4 col-span-1 row-span-2 group relative flex flex-col justify-center gap-6 items-center">
-            <Image
-                loading="eager"
-                src={Logo}
-                alt="RCG Logo"
-                width="460"
-                class="!w-72 mx-auto"
-            />
-            <Button type="highlight">Reserve su cita <br> por WhatsApp</Button>
+            <a href="/"
+                ><Image
+                    loading="eager"
+                    src={Logo}
+                    alt="RCG Logo"
+                    width="460"
+                    class="!w-72 mx-auto"
+                />
+            </a>
+
+            <Button type="highlight">
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/contacto' : '/contacto'}>Reserve su cita</a>
+            </Button>
         </div>
-        <div class="p-4">
+        <div class="flex flex-col p-4">
             <h4 class="text-3xl">Contáctenos</h4>
-            <p class="text-xl max-w-4xl font-medium">raul@abogadosrcg.com</p>
-            <p class="text-xl max-w-4xl font-medium">699 629 268</p>
+            <a href="tel:956383484" class="text-xl max-w-4xl font-medium"
+                >956 38 34 84</a
+            >
+            <a
+                href="mailto:raul@abogadosrcg.com"
+                class="text-xl max-w-4xl font-medium">raul@abogadosrcg.com</a
+            >
+            <a
+                href="mailto:alberto@abogadosrcg.com"
+                class="text-xl max-w-4xl font-medium">alberto@abogadosrcg.com</a
+            >
         </div>
         <div class="p-4">
-            <h4 class="text-3xl">Ubicación</h4>
-            <p class="text-xl max-w-4xl font-medium">
-                Calle Diego Jiménez, 11540, Sanlúcar de Barrameda, España
-            </p>
+            <a href="https://maps.app.goo.gl/KMAoddNjNDMHMQsj9" target="_blank">
+                <h4 class="text-3xl">Ubicación</h4>
+                <p class="text-xl max-w-4xl font-medium">
+                    Avenida Nao Victoria, Edificio Arroyo San Juan (esquina
+                    Calle Diego Jiménez), 2ª Planta, Puerta 9.
+                </p>
+            </a>
         </div>
         <div class="p-4">
             <h4 class="text-3xl">Horarios</h4>
             <p class="text-xl max-w-4xl font-medium">
-                Lunes a Viernes 9:00am a 9:00pm
+                Lunes a Viernes <br /> 10:00 a 13:30 y 17:00 a 20:00
             </p>
         </div>
         <div class="border-t col-span-3 row-span-1 text-md flex justify-center">

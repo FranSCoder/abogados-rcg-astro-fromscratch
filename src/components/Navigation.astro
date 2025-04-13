@@ -35,7 +35,7 @@ import Logo from "../assets/Logo AbogadosRCG.png";
         </li>
         <li class="ml-4 whitespace-nowrap">
             <Button type="highlight">
-                <a href="#">CONSÚLTENOS</a>
+                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/contacto' : '/contacto'}>CONSÚLTENOS</a>
             </Button>
         </li>
     </ul>

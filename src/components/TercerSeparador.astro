@@ -7,12 +7,12 @@ import Button from "./Button";
     <h2 class="text-5xl">Agende su Consulta Jurídica</h2>
     <p class="text-xl max-w-4xl font-medium">
         No espere más para recibir la asesoría que necesita. Para agendar su
-        cita o hacer una consulta, simplemente contáctenos por teléfono al
-        699629268. Nuestro bufete está disponible de lunes a viernes, de 9:00 AM
-        a 8:00 PM, con abogados siempre listos para ofrecerle el mejor apoyo
-        legal.
+        cita o hacer una consulta, simplemente contáctenos por teléfono al 956
+        38 34 84. Nuestro bufete está disponible de lunes a viernes, de 10:00 a
+        13:30 y 17:00 a 20:00, con abogados siempre listos para ofrecerle el
+        mejor apoyo legal.
     </p>
     <Button type="highlight">
-        <a href="#">CONSÚLTENOS</a>
+        <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/contacto' : '/contacto'}>CONSÚLTENOS</a>
     </Button>
 </div>
