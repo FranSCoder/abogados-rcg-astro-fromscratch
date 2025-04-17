@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+    --color-main-blue: #0A1F44;
+    --color-dark-blue: #071630;
+    --color-main-gold: #713f12;
+    --animate-fadeIn: fadeIn 2s ease forwards;
+    --animate-backgroundFadeIn: backgroundFadeIn 1s ease forwards;
+    --animate-fadeInDown: fadeInDown 1s ease forwards;
+    --animate-fadeInSlightlyDown: fadeInSlightlyDown 1s ease forwards;
+    --animate-delayedFadeInDown: fadeInDown 1s ease .5s forwards;
+    --animate-headerAnimation: headerAnimation .8s ease forwards;
+    --animate-fadeInLeft: fadeInLeft 1s ease forwards;
+        
+    @keyframes headerAnimation {
+        0% {
+            transform: translateY(-60px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes backgroundFadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: .3;
+        }
+    }
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInSlightlyDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInLeft {
+        0% {
+            opacity: 0; 
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateY(0); 
+            opacity: 1;
+        }
+    }
+}

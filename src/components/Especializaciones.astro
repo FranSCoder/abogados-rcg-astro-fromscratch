@@ -4,13 +4,13 @@ import Especializacion from "./Especializacion";
 
 <div class="flex flex-col py-20">
     <div class="gap-8 w-full flex flex-col justify-center items-center">
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-8 duration-1000 fadeInDownOnScroll translate-y-[-3rem] opacity-0">
             <h2
-                class="text-5xl text-gray-100 text-center duration-1000 fadeInDownOnScroll translate-y-[-3rem] opacity-0">
+                class="text-5xl text-gray-100 text-center">
                 Nuestra experiencia nos avala
             </h2>
             <p
-                class="text-xl text-gray-100 text-center max-w-4xl duration-1000 fadeInOnScroll opacity-0">
+                class="max-lg:px-8 text-xl text-gray-100 text-center max-w-4xl">
                 En Abogados RCG, contamos con una sólida trayectoria en
                 distintas áreas del derecho. Nuestro compromiso y experiencia
                 nos permiten ofrecerle asesoramiento especializado y soluciones
@@ -19,9 +19,9 @@ import Especializacion from "./Especializacion";
             </p>
         </div>
 
-        <div class="grid grid-cols-2 grid-rows-2 gap-12 w-9/12 aspect-[4/3]">
+        <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-12 w-9/12 lg:aspect-[4/3]">
             <div
-                class="relative p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
+                class="min-h-60 relative flex items-end p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
                 <Especializacion
                     imageRoute="reunion.jpg"
                     title="Laboral"
@@ -29,7 +29,7 @@ import Especializacion from "./Especializacion";
                 />
             </div>
             <div
-                class="relative p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
+                class="min-h-60 relative flex items-end p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
                 <Especializacion
                     imageRoute="family.jpg"
                     title="Civil"
@@ -37,7 +37,7 @@ import Especializacion from "./Especializacion";
                 />
             </div>
             <div
-                class="relative p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
+                class="border-2 min-h-60 relative flex items-end p-4 translate-x-[-5rem] opacity-0 fadeInRightOnScroll duration-1000">
                 <Especializacion
                     imageRoute={"papeles.jpg"}
                     title="Administrativo"
@@ -45,7 +45,7 @@ import Especializacion from "./Especializacion";
                 />
             </div>
             <div
-                class="relative p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
+                class="min-h-60 relative flex items-end p-4 translate-x-20 opacity-0 fadeInLeftOnScroll duration-1000">
                 <Especializacion
                     imageRoute={"carkeys.jpg"}
                     title="Penal"
