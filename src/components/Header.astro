@@ -1,13 +1,25 @@
 ---
 import Navigation from "./Navigation.astro";
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo AbogadosRCG.png";
 ---
 
 <header
-    class="flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 animate-headerAnimation"
+    class="max-md:grid max-md:grid-cols-3 flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 animate-headerAnimation"
 >
+    <a href="/" class="group relative inline-block">
+        <Image
+            loading="eager"
+            src={Logo}
+            alt="RCG Logo"
+            width="220"
+            class="!w-40 transition-all group-hover:scale-105 group-hover:brightness-110 group-hover:shadow-[0_0_10px_2px_rgba(0,0,0,.1)]"
+        />
+    </a>
+
     <button
         id="menu-toggle"
-        class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+        class="flex justify-center md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
     >
         <svg
             class="w-8 h-8 text-gray-800"
@@ -25,6 +37,7 @@ import Navigation from "./Navigation.astro";
     </button>
 
     <nav
+        id="menu"
         class="hidden md:flex justify-center w-full active:flex active:flex-col active:items-center"
     >
         <Navigation />
@@ -37,6 +50,27 @@ import Navigation from "./Navigation.astro";
             .querySelector("header")
             ?.classList.toggle("scrolled", window.scrollY > 50);
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        // Toggle al hacer clic en el botón
+        toggleButton?.addEventListener("click", (e) => {
+            e.stopPropagation(); // evita que se cierre inmediatamente
+            menu?.classList.toggle("active");
+        });
+
+        // Evita que se cierre si haces clic dentro del menú
+        menu?.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        // Cierra el menú si haces clic fuera
+        document.addEventListener("click", () => {
+            menu?.classList.remove("active");
+        });
+    });
 </script>
 
 <style>
@@ -45,6 +79,6 @@ import Navigation from "./Navigation.astro";
         margin-top: -5px;
         padding-top: 5px;
         opacity: 0.95;
-        transition: all .5s ease
+        transition: all 0.5s ease;
     }
 </style>
