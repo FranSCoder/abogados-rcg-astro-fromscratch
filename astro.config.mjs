@@ -16,5 +16,5 @@ export default defineConfig({
   integrations: [react()],
   // site: 'http://localhost:4321'
   site: 'https://FranSCoder.github.io',
-  base: '/abogados-rcg-astro-fromscratch',
+  base: 'abogados-rcg-astro-fromscratch',
 });
