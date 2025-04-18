@@ -5,10 +5,13 @@ import Logo from "../assets/Logo AbogadosRCG.png";
 ---
 
 <header
-    class="flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 transition-all animate-headerAnimation"
->
+    class="flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 transition-all animate-headerAnimation">
     <!-- Logo -->
-    <a href="/" class="group relative inline-block">
+    <a
+        href={import.meta.env.MODE === "production"
+            ? "/abogados-rcg-astro-fromscratch/"
+            : "/"}
+        class="group relative inline-block">
         <Image
             loading="eager"
             src={Logo}
@@ -23,34 +26,28 @@ import Logo from "../assets/Logo AbogadosRCG.png";
         <!-- Menu -->
         <div
             id="menu"
-            class="max-md:py-4 max-md:flex max-md:flex-col max-md:opacity-0 max-md:pointer-events-none max-md:max-h-0 max-md:overflow-hidden max-md:rounded-b-md max-md:absolute max-md:top-13 max-md:left-0 transition-all duration-500 bg-white px-6 w-full items-center z-40"
-        >
+            class="max-md:py-4 max-md:flex max-md:flex-col max-md:opacity-0 max-md:pointer-events-none max-md:max-h-0 max-md:overflow-hidden max-md:rounded-b-md max-md:absolute max-md:top-13 max-md:left-0 transition-all duration-500 bg-white px-6 w-full items-center z-40">
             <ul
                 id="ulist"
-                class="flex max-md:flex-col w-full justify-end gap-2 text-lg font-medium items-center"
-            >
+                class="flex max-md:flex-col w-full justify-end gap-2 text-lg font-medium items-center">
                 <li
-                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]"
-                >
+                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]">
                     <Button type="text-only">
                         <a
                             href={import.meta.env.MODE === "production"
                                 ? "/abogados-rcg-astro-fromscratch/"
-                                : "/"}
-                        >
+                                : "/"}>
                             INICIO
                         </a>
                     </Button>
                 </li>
                 <li
-                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]"
-                >
+                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]">
                     <Button type="text-only">
                         <a
                             href={import.meta.env.MODE === "production"
                                 ? "/abogados-rcg-astro-fromscratch/nosotros"
-                                : "/nosotros"}
-                        >
+                                : "/nosotros"}>
                             NOSOTROS
                         </a>
                     </Button>
@@ -60,8 +57,7 @@ import Logo from "../assets/Logo AbogadosRCG.png";
                         <a
                             href={import.meta.env.MODE === "production"
                                 ? "/abogados-rcg-astro-fromscratch/contacto"
-                                : "/contacto"}
-                        >
+                                : "/contacto"}>
                             CONTACTO
                         </a>
                     </Button>
@@ -81,15 +77,13 @@ import Logo from "../assets/Logo AbogadosRCG.png";
         <button
             title="menu-toggle"
             id="menu-toggle"
-            class="flex justify-center md:hidden p-2 rounded-md focus:outline-none"
-        >
+            class="flex justify-center md:hidden p-2 rounded-md focus:outline-none">
             <svg
                 class="w-8 h-8 text-gray-800"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
+                stroke="currentColor">
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -109,31 +103,39 @@ import Logo from "../assets/Logo AbogadosRCG.png";
 
     document.addEventListener("DOMContentLoaded", () => {
         const toggleButton = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
+        const menu = document.getElementById("menu");
 
-  toggleButton?.addEventListener("click", (e) => {
-    e.stopPropagation();
+        toggleButton?.addEventListener("click", (e) => {
+            e.stopPropagation();
 
-    const isOpen = menu?.classList.contains("max-md:opacity-100");
+            const isOpen = menu?.classList.contains("max-md:opacity-100");
 
-    menu?.classList.toggle("max-md:opacity-0", isOpen);
-    menu?.classList.toggle("max-md:pointer-events-none", isOpen);
-    menu?.classList.toggle("max-md:max-h-0", isOpen);
-    menu?.classList.toggle("max-md:opacity-100", !isOpen);
-    menu?.classList.toggle("max-md:pointer-events-auto", !isOpen);
-    menu?.classList.toggle("max-md:max-h-[200px]", !isOpen); // suficiente altura
-  });
+            menu?.classList.toggle("max-md:opacity-0", isOpen);
+            menu?.classList.toggle("max-md:pointer-events-none", isOpen);
+            menu?.classList.toggle("max-md:max-h-0", isOpen);
+            menu?.classList.toggle("max-md:opacity-100", !isOpen);
+            menu?.classList.toggle("max-md:pointer-events-auto", !isOpen);
+            menu?.classList.toggle("max-md:max-h-[200px]", !isOpen); // suficiente altura
+        });
 
-  // Evitar cierre al hacer clic dentro
-  menu?.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+        // Evitar cierre al hacer clic dentro
+        menu?.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
 
-  // Cerrar si se hace clic fuera
-  document.addEventListener("click", () => {
-    menu?.classList.add("max-md:opacity-0", "max-md:pointer-events-none", "max-md:max-h-0");
-    menu?.classList.remove("max-md:opacity-100", "max-md:pointer-events-auto", "max-md:max-h-[200px]");
-  });
+        // Cerrar si se hace clic fuera
+        document.addEventListener("click", () => {
+            menu?.classList.add(
+                "max-md:opacity-0",
+                "max-md:pointer-events-none",
+                "max-md:max-h-0"
+            );
+            menu?.classList.remove(
+                "max-md:opacity-100",
+                "max-md:pointer-events-auto",
+                "max-md:max-h-[200px]"
+            );
+        });
     });
 </script>
 

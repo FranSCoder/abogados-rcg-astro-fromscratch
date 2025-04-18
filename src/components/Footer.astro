@@ -12,9 +12,12 @@ const links = [
 ];
 ---
 
-<div class="overflow-hidden flex justify-center bg-white pt-10 text-center text-main-gold">
-    <div class="w-9/12 grid grid-cols-3 grid-rows-2 max-md:grid-cols-1 max-md:grid-rows-[repeat(6,auto)] gap-4 px-auto">
-        <div class="max-md:order-2 p-4 flex flex-col justify-center items-center gap-2">
+<div
+    class="overflow-hidden flex justify-center bg-white pt-10 text-center text-main-gold">
+    <div
+        class="w-9/12 grid grid-cols-3 grid-rows-2 max-md:grid-cols-1 max-md:grid-rows-[repeat(6,auto)] gap-4 px-auto">
+        <div
+            class="max-md:order-2 p-4 flex flex-col justify-center items-center gap-2">
             <h4 class="text-3xl">Síganos en Redes Sociales</h4>
             <a
                 href="https://www.facebook.com/people/RCG-Abogados/100068231351393/?ref=hl"
@@ -35,7 +38,10 @@ const links = [
         </div>
         <div
             class="p-4 col-span-1 md:row-span-2 max-md:order-1 group relative flex flex-col justify-center gap-6 items-center">
-            <a href="/"
+            <a
+                href={import.meta.env.MODE === "production"
+                    ? "/abogados-rcg-astro-fromscratch/"
+                    : "/"}
                 ><Image
                     loading="eager"
                     src={Logo}
@@ -46,10 +52,15 @@ const links = [
             </a>
 
             <Button type="highlight">
-                <a href={import.meta.env.MODE === 'production' ? '/abogados-rcg-astro-fromscratch/contacto' : '/contacto'}>Reserve su cita</a>
+                <a
+                    href={import.meta.env.MODE === "production"
+                        ? "/abogados-rcg-astro-fromscratch/contacto"
+                        : "/contacto"}>Reserve su cita</a
+                >
             </Button>
         </div>
-        <div class="max-md:order-3 p-4 flex flex-col justify-center items-center gap-2">
+        <div
+            class="max-md:order-3 p-4 flex flex-col justify-center items-center gap-2">
             <h4 class="text-3xl">Contáctenos</h4>
             <a href="tel:956383484" class="text-xl max-w-4xl font-medium"
                 >956 38 34 84</a
@@ -63,7 +74,8 @@ const links = [
                 class="text-xl max-w-4xl font-medium">alberto@abogadosrcg.com</a
             >
         </div>
-        <div class="max-md:order-4 p-4 flex flex-col justify-center items-center gap-2">
+        <div
+            class="max-md:order-4 p-4 flex flex-col justify-center items-center gap-2">
             <a href="https://maps.app.goo.gl/KMAoddNjNDMHMQsj9" target="_blank">
                 <h4 class="text-3xl">Ubicación</h4>
                 <p class="text-xl max-w-4xl font-medium">
@@ -72,13 +84,15 @@ const links = [
                 </p>
             </a>
         </div>
-        <div class="max-md:order-5 p-4 flex flex-col justify-center items-center gap-2">
+        <div
+            class="max-md:order-5 p-4 flex flex-col justify-center items-center gap-2">
             <h4 class="text-3xl">Horarios</h4>
             <p class="text-xl max-w-4xl font-medium">
                 Lunes a Viernes <br /> 10:00 a 13:30 y 17:00 a 20:00
             </p>
         </div>
-        <div class="max-md:order-6 border-t md:col-span-3 row-span-1 text-md flex justify-center py-8">
+        <div
+            class="max-md:order-6 border-t md:col-span-3 row-span-1 text-md flex justify-center py-8">
             <ul
                 class="flex flex-wrap justify-center items-center text-gray-600">
                 {
