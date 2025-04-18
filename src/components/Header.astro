@@ -1,12 +1,13 @@
 ---
-import Navigation from "./Navigation.astro";
+import Button from "./Button";
 import { Image } from "astro:assets";
 import Logo from "../assets/Logo AbogadosRCG.png";
 ---
 
 <header
-    class="max-md:grid max-md:grid-cols-3 flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 animate-headerAnimation"
+    class="flex justify-center items-center bg-white shadow-md z-50 fixed w-full h-16 px-10 transition-all animate-headerAnimation"
 >
+    <!-- Logo -->
     <a href="/" class="group relative inline-block">
         <Image
             loading="eager"
@@ -17,30 +18,85 @@ import Logo from "../assets/Logo AbogadosRCG.png";
         />
     </a>
 
-    <button
-        id="menu-toggle"
-        class="flex justify-center md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-    >
-        <svg
-            class="w-8 h-8 text-gray-800"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    <!-- Menu Navegacion -->
+    <nav class="flex justify-end w-full">
+        <!-- Menu -->
+        <div
+            id="menu"
+            class="max-md:flex max-md:flex-col max-md:opacity-0 max-md:pointer-events-none max-md:max-h-0 max-md:overflow-hidden transition-all duration-500 absolute bg-white top-13 left-0 p-6 rounded-b-md w-full items-center z-40"
         >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-
-    <nav
-        id="menu"
-        class="hidden md:flex justify-center w-full active:flex active:flex-col active:items-center"
-    >
-        <Navigation />
+            <ul
+                id="ulist"
+                class="flex max-md:flex-col w-full justify-end gap-2 text-lg font-medium items-center"
+            >
+                <li
+                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]"
+                >
+                    <Button type="text-only">
+                        <a
+                            href={import.meta.env.MODE === "production"
+                                ? "/abogados-rcg-astro-fromscratch/"
+                                : "/"}
+                        >
+                            INICIO
+                        </a>
+                    </Button>
+                </li>
+                <li
+                    class="whitespace-nowrap md:after:content-['|'] md:after:relative md:after:-top-[2px]"
+                >
+                    <Button type="text-only">
+                        <a
+                            href={import.meta.env.MODE === "production"
+                                ? "/abogados-rcg-astro-fromscratch/nosotros"
+                                : "/nosotros"}
+                        >
+                            NOSOTROS
+                        </a>
+                    </Button>
+                </li>
+                <li class="whitespace-nowrap">
+                    <Button type="text-only">
+                        <a
+                            href={import.meta.env.MODE === "production"
+                                ? "/abogados-rcg-astro-fromscratch/contacto"
+                                : "/contacto"}
+                        >
+                            CONTACTO
+                        </a>
+                    </Button>
+                </li>
+                <li class="ml-4 whitespace-nowrap">
+                    <Button type="highlight">
+                        <a
+                            href={import.meta.env.MODE === "production"
+                                ? "/abogados-rcg-astro-fromscratch/contacto"
+                                : "/contacto"}>CONSÚLTENOS</a
+                        >
+                    </Button>
+                </li>
+            </ul>
+        </div>
+        <!-- Boton Hamburguesa -->
+        <button
+            title="menu-toggle"
+            id="menu-toggle"
+            class="flex justify-center md:hidden p-2 rounded-md focus:outline-none"
+        >
+            <svg
+                class="w-8 h-8 text-gray-800"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
     </nav>
 </header>
 
@@ -53,23 +109,31 @@ import Logo from "../assets/Logo AbogadosRCG.png";
 
     document.addEventListener("DOMContentLoaded", () => {
         const toggleButton = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
+  const menu = document.getElementById("menu");
 
-        // Toggle al hacer clic en el botón
-        toggleButton?.addEventListener("click", (e) => {
-            e.stopPropagation(); // evita que se cierre inmediatamente
-            menu?.classList.toggle("active");
-        });
+  toggleButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-        // Evita que se cierre si haces clic dentro del menú
-        menu?.addEventListener("click", (e) => {
-            e.stopPropagation();
-        });
+    const isOpen = menu?.classList.contains("max-md:opacity-100");
 
-        // Cierra el menú si haces clic fuera
-        document.addEventListener("click", () => {
-            menu?.classList.remove("active");
-        });
+    menu?.classList.toggle("max-md:opacity-0", isOpen);
+    menu?.classList.toggle("max-md:pointer-events-none", isOpen);
+    menu?.classList.toggle("max-md:max-h-0", isOpen);
+    menu?.classList.toggle("max-md:opacity-100", !isOpen);
+    menu?.classList.toggle("max-md:pointer-events-auto", !isOpen);
+    menu?.classList.toggle("max-md:max-h-[200px]", !isOpen); // suficiente altura
+  });
+
+  // Evitar cierre al hacer clic dentro
+  menu?.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Cerrar si se hace clic fuera
+  document.addEventListener("click", () => {
+    menu?.classList.add("max-md:opacity-0", "max-md:pointer-events-none", "max-md:max-h-0");
+    menu?.classList.remove("max-md:opacity-100", "max-md:pointer-events-auto", "max-md:max-h-[200px]");
+  });
     });
 </script>
 
