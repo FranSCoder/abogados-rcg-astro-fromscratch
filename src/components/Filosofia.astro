@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import Papeles from "../assets/papeles.jpg";
 ---
 
-<div class="flex w-full h-screen overflow-hidden">
-    <div class="w-1/2 flex justify-center">
+<div class="flex w-full overflow-hidden">
+    <div class="w-1/2 flex justify-center py-8">
         <div
             class="gap-3 w-5/6 flex flex-col justify-center items-start text-center opacity-0 translate-x-[-5rem] ease duration-1000 fadeInRightOnScroll">
             <h2 class="text-5xl text-gray-100 text-left">Nuestra Filosofía</h2>
@@ -35,7 +35,7 @@ import Papeles from "../assets/papeles.jpg";
         </div>
     </div>
     <Image
-        class="w-1/2 object-cover h-screen transition-all opacity-0 translate-x-20 duration-1000 ease fadeInLeftOnScroll"
+        class="w-1/2 object-cover transition-all opacity-0 translate-x-20 duration-1000 ease fadeInLeftOnScroll"
         src={Papeles}
         alt="Pluma estilográfica"
     />
