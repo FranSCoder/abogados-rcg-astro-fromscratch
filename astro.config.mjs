@@ -14,7 +14,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [react()],
-  site: 'http://localhost:4321'
-  // site: 'https://FranSCoder.github.io',
-  // base: '/abogados-rcg-astro-fromscratch',
+  // site: 'http://localhost:4321'
+  site: 'https://FranSCoder.github.io',
+  base: '/abogados-rcg-astro-fromscratch',
 });
